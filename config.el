@@ -88,3 +88,18 @@
         smartparens-global-mode t
         smartparens-strict-mode t)
   (cljr-add-keybindings-with-prefix "C-c C-c"))
+
+(after! smartparens
+
+  (smartparens-global-strict-mode)
+
+  ;; https://github.com/Fuco1/smartparens/blob/master/smartparens.el#L300
+  (sp-use-paredit-bindings)
+
+  ;; undo the damage done by
+  ;; https://github.com/hlissner/doom-emacs/blob/develop/modules/config/default/config.el#L107
+  ;; so we get matching parens when point is before a word again
+  (dolist (brace '("(" "{" "["))
+    (sp-pair brace nil
+             :post-handlers '(("||\n[i]" "RET") ("| " "SPC"))
+             :unless '())))
