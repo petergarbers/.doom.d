@@ -99,7 +99,7 @@
   ;; undo the damage done by
   ;; https://github.com/hlissner/doom-emacs/blob/develop/modules/config/default/config.el#L107
   ;; so we get matching parens when point is before a word again
-  (dolist (brace '("(" "{" "["))
+  (dolist (brace '("(" "{" "[" "\""))
     (sp-pair brace nil
              :post-handlers '(("||\n[i]" "RET") ("| " "SPC"))
              :unless '())))
