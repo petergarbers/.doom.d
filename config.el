@@ -21,8 +21,8 @@
 ;; font string. You generally only need these two:
 
 (setq doom-font (font-spec :family "Inconsolata Nerd Font Mono" :size 25)
-        doom-variable-pitch-font (font-spec :family "Inconsolata Nerd Font Mono" :size 13)
-        doom-big-font (font-spec :family "Inconsolata Nerd Font Mono" :size 40))
+      doom-variable-pitch-font (font-spec :family "Inconsolata Nerd Font Mono" :size 13)
+      doom-big-font (font-spec :family "Inconsolata Nerd Font Mono" :size 40))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -103,10 +103,11 @@
              :post-handlers '(("||\n[i]" "RET") ("| " "SPC"))
              :unless '())))
 
-;; (use-package! copilot
-;;   :hook (prog-mode . copilot-mode)
-;;   :bind (:map copilot-completion-map
-;;               ("<tab>" . 'copilot-accept-completion)
-;;               ("TAB" . 'copilot-accept-completion)
-;;               ("C-TAB" . 'copilot-accept-completion-by-word)
-;;               ("C-<tab>" . 'copilot-accept-completion-by-word)))
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
